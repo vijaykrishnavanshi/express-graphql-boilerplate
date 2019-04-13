@@ -1,13 +1,13 @@
 const dotenv = require("dotenv");
 dotenv.config();
 
-const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const typeDefs = require('./graphql/typeDefs');
 const resolvers = require('./graphql/resolvers');
 const server = new ApolloServer({ typeDefs, resolvers });
 
-const app = express();
+const app = require('./app');
+
 server.applyMiddleware({ app });
 
 // Here you set the PORT and IP of the server
