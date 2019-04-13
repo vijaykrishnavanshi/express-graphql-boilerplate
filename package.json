@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "lint": "./node_modules/.bin/eslint .",
-    "lint:fix": "./node_modules/.bin/eslint . --fix"
+    "lint:fix": "./node_modules/.bin/eslint . --fix",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-security": "^1.4.0",
+    "nodemon": "^1.18.11",
     "prettier": "^1.17.0"
   }
 }
