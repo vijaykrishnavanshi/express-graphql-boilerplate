@@ -1,9 +1,9 @@
-const hello = require('./query/hello');
+const hello = require("./query/hello");
 
 const Resolvers = {
-    Query: {
-        post_hello: hello
-    },
+  Query: {
+    post_hello: hello
+  }
 };
 
 module.exports = Resolvers;
