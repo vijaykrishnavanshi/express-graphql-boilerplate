@@ -1,8 +1,8 @@
-const user = require('./query/user');
+const hello = require('./query/hello');
 
 const Resolvers = {
     Query: {
-        user: user
+        user_hello: hello,
     },
 };
 
