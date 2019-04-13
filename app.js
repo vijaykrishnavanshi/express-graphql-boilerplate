@@ -12,6 +12,9 @@ const cors = require("cors");
 // Express App
 const app = express();
 
+// connect database
+require("./db");
+
 // Use default logger for now
 app.use(logger("dev"));
 app.use(cors());
