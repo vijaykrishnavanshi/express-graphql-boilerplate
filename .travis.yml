@@ -6,4 +6,3 @@ before_install:
 cache: npm
 install:
     - npm install
-
