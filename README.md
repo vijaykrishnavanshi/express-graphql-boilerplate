@@ -29,3 +29,9 @@ Used [Mocha](https://mochajs.org/)
 ```closure
 npm run test  # for running tests
 ```
+
+## Deploy the project
+
+```closure
+npm run deploy  # for deploying the project
+```
