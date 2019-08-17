@@ -5,7 +5,6 @@ const logger = require("./utils/logger");
 const { ApolloServer } = require("apollo-server-express");
 const typeDefs = require("./graphql/typeDefs");
 const resolvers = require("./graphql/resolvers");
-console.log("typeDefs: ", typeDefs);
 const server = new ApolloServer({ typeDefs, resolvers });
 
 const app = require("./app");
