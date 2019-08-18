@@ -6,10 +6,10 @@ const typeDefs = `
 `;
 
 const resolvers = {
-  post_update: require('./post_update')
+  post_update: require('./post_update'),
 };
 
 module.exports = {
   typeDefs,
-  resolvers
+  resolvers,
 };

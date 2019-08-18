@@ -5,10 +5,10 @@ const typeDefs = `
 `;
 
 const resolvers = {
-  post_hello: require('./post_hello')
+  post_hello: require('./post_hello'),
 };
 
 module.exports = {
   typeDefs,
-  resolvers
+  resolvers,
 };

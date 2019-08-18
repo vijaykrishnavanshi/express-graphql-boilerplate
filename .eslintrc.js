@@ -13,7 +13,7 @@ module.exports = {
         "node/no-unsupported-features": "off",
         "node/no-extraneous-require": "off",
         "node/exports-style": ["error", "module.exports"],
-        "prettier/prettier": ["error", { "singleQuote": true, "parser": "flow" }]
+        "prettier/prettier": ["error", { "singleQuote": true, "parser": "flow", "trailingComma": "all" }],
     },
     "parserOptions": {
         "sourceType": "module"

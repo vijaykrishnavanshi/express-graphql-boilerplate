@@ -15,5 +15,5 @@ const baseTypeDefs = `
 
 module.exports = {
   typeDefs: [baseTypeDefs, postModule.typeDefs, userModule.typeDefs],
-  resolvers: merge(postModule.resolvers, userModule.resolvers)
+  resolvers: merge(postModule.resolvers, userModule.resolvers),
 };

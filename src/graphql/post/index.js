@@ -5,10 +5,10 @@ const typeDefs = [Query.typeDefs, Mutation.typeDefs].join('\n');
 
 const resolvers = {
   Query: Query.resolvers,
-  Mutation: Mutation.resolvers
+  Mutation: Mutation.resolvers,
 };
 
 module.exports = {
   typeDefs,
-  resolvers
+  resolvers,
 };
