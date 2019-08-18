@@ -5,12 +5,12 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "lint": "./node_modules/.bin/eslint .",
-    "lint:fix": "./node_modules/.bin/eslint . --fix",
+    "start": "node src/server.js",
+    "lint": "./node_modules/.bin/eslint ./src",
+    "lint:fix": "./node_modules/.bin/eslint ./src --fix",
     "predeploy": "NODE_ENV=production npm install",
     "deploy": "npm start",
-    "dev": "nodemon server.js"
+    "dev": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
