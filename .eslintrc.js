@@ -12,7 +12,8 @@ module.exports = {
     "rules": {
         "node/no-unsupported-features": "off",
         "node/no-extraneous-require": "off",
-        "node/exports-style": ["error", "module.exports"]
+        "node/exports-style": ["error", "module.exports"],
+        "prettier/prettier": ["error", { "singleQuote": true, "parser": "flow" }]
     },
     "parserOptions": {
         "sourceType": "module"
@@ -22,4 +23,3 @@ module.exports = {
         "node": true
     }
 }
-
