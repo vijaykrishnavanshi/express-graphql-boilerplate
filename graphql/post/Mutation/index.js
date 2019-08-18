@@ -1,4 +1,4 @@
-const post_update = require("./update");
+const post_update = require("./post_update");
 
 module.exports = {
   post_update
