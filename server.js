@@ -3,8 +3,8 @@ dotenv.config();
 
 const logger = require("./utils/logger");
 const { ApolloServer } = require("apollo-server-express");
-const typeDefs = require("./graphql/typeDefs");
-const resolvers = require("./graphql/resolvers");
+const typeDefs = require("./graphql/rootSchema");
+const resolvers = require("./graphql/rootResolver");
 const server = new ApolloServer({ typeDefs, resolvers });
 
 const app = require("./app");
