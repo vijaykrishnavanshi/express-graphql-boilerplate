@@ -1,5 +1,14 @@
-const user_hello = require("./user_hello");
+const typeDefs = `
+extend type Query {
+  user_hello: String!
+}
+`;
+
+const resolvers = {
+  user_hello: require("./user_hello")
+};
 
 module.exports = {
-  user_hello
+  typeDefs,
+  resolvers
 };

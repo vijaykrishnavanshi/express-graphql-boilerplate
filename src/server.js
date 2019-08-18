@@ -3,7 +3,7 @@ dotenv.config();
 
 const logger = require("./utils/logger");
 const { ApolloServer } = require("apollo-server-express");
-const GraphQL = require("./graphql/index");
+const GraphQL = require("./graphql");
 
 const server = new ApolloServer({
   typeDefs: GraphQL.typeDefs,
