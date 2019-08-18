@@ -5,7 +5,7 @@ extend type Query {
 `;
 
 const resolvers = {
-  user_hello: require("./user_hello")
+  user_hello: require('./user_hello')
 };
 
 module.exports = {

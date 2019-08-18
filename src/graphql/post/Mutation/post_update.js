@@ -1,3 +1,3 @@
-const update = () => "Hello update!";
+const update = () => 'Hello update!';
 
 module.exports = update;

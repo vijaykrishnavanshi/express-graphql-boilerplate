@@ -1,6 +1,6 @@
-const Query = require("./Query");
+const Query = require('./Query');
 
-const typeDefs = [Query.typeDefs].join("\n");
+const typeDefs = [Query.typeDefs].join('\n');
 
 const resolvers = {
   Query: Query.resolvers
