@@ -16,5 +16,5 @@ const port = process.env.PORT || 8001;
 const ip = process.env.IP || "127.0.0.1";
 
 app.listen({ port, ip }, () =>
-  logger.info(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+  logger.info(`🚀 Server ready at http://${ip}:${port}${server.graphqlPath}`)
 );

@@ -1,6 +1,6 @@
 // Construct a schema, using GraphQL schema language
 const typeDefs = `
-  type Query {
+  extend type Query {
     user_hello: String!
   }
 `;
