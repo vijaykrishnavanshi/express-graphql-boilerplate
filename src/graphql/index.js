@@ -1,6 +1,6 @@
 const { merge } = require("lodash");
-const postModule = require("./post");
 const userModule = require("./user");
+const postModule = require("./post");
 const baseTypeDefs = `
     type Query {
         _empty: String
