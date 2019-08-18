@@ -10,7 +10,7 @@ const baseSchema = `
     }
 `;
 
-const postSchema = require("./post/typeDefs");
+const postSchema = require("./post/schema");
 const userSchema = require("./user/schema");
 
 module.exports = [baseSchema, postSchema, userSchema];
