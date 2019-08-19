@@ -10,6 +10,7 @@ const resolvers = {
 };
 
 module.exports = {
+  typeName: 'Mutation',
   typeDefs,
   resolvers,
 };

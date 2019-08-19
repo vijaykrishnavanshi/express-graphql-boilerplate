@@ -1,14 +1,18 @@
-const Query = require('./Query');
-const Mutation = require('./Mutation');
+const subModules = [
+  require('./Query'),
+  require('./Mutation'),
+  // Some Factor
+];
 
-const typeDefs = [Query.typeDefs, Mutation.typeDefs].join('\n');
+const typeDefs = [];
+const resolvers = {};
 
-const resolvers = {
-  Query: Query.resolvers,
-  Mutation: Mutation.resolvers,
-};
+subModules.forEach(subModule => {
+  typeDefs.push(subModule.typeDefs);
+  resolvers[subModule.typeName] = subModule.resolvers;
+});
 
 module.exports = {
-  typeDefs,
+  typeDefs: typeDefs.join('\n'),
   resolvers,
 };

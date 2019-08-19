@@ -9,6 +9,7 @@ const resolvers = {
 };
 
 module.exports = {
+  typeName: 'Query',
   typeDefs,
   resolvers,
 };
