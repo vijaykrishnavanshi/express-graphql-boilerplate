@@ -35,3 +35,21 @@ npm run test  # for running tests
 ```closure
 npm run deploy  # for deploying the project
 ```
+
+## Directory Structure:
+
+```
+src/
++ - <module-1>/
++ -------- Query/
++ -------- Mutation/
++ -------- Subscriptions/
++ - <module-2>/
++ -------- Query/
++ -------- Mutation/
++ -------- Subscriptions/
+package.json
+README.md
+LICENSE
+Dockerfile
+```
