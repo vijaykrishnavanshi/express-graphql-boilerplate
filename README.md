@@ -40,7 +40,7 @@ npm run deploy  # for deploying the project
 
 ```
 log/
-+ - Logs of the running server
+    Logs of the running server
 src/
     generator/
         <generator.js>
