@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const logger = require('./utils/logger');
+const logger = require('../utils/logger');
 
 // Build the connection string
 const dbURI = process.env.MONGOURI || 'mongodb://localhost/boilerplate_graphql';
