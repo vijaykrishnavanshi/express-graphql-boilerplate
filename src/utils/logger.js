@@ -10,14 +10,14 @@ const logger = bunyan.createLogger({
     {
       type: 'rotating-file',
       level: 'info',
-      path: 'log/boilerplate-debug.log',
+      path: 'logs/boilerplate-debug.log',
       period: '1d', // daily rotation
       count: 10, // keep 10 back copies
     },
     {
       type: 'rotating-file',
       level: 'error',
-      path: 'log/boilerplate-error.log',
+      path: 'logs/boilerplate-error.log',
       period: '1d', // daily rotation
       count: 10, // keep 10 back copies
     },
