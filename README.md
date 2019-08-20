@@ -42,16 +42,25 @@ npm run deploy  # for deploying the project
 log/
 + - Logs of the running server
 src/
-+ - <module-1>/
-+ -------- Query/
-+ -------- Mutation/
-+ -------- Subscriptions/
-+ -------- <New TypeDef in GQL>
-+ - <module-2>/
-+ -------- Query/
-+ -------- Mutation/
-+ -------- Subscriptions/
-+ -------- <New TypeDef in GQL>
+    generator/
+        <generator.js>
+    graphql/
+        <module-1>/
+            Query/
+            Mutation/
+            Subscriptions/
+            <New TypeDef in GQL>
+        <module-2>/
+            Query/
+            Mutation/
+            Subscriptions/
+            <New TypeDef in GQL>
+    models/
+        <model-1>
+        <model-2>
+        <index.js>
+    utils/
+        <logger.js>
 package.json
 README.md
 LICENSE
