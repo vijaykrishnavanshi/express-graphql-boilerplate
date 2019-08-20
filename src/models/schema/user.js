@@ -10,12 +10,6 @@ _user.schema = new Schema(
 
     // system generated
     createdAt: { type: Number, required: true },
-    createdBy: {
-      type: Schema.Types.ObjectId,
-      ref: 'users',
-      required: true,
-    },
-
     updatedAt: { type: Number },
   },
   { usePushEach: true },
