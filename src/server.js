@@ -1,4 +1,3 @@
-require('module-alias/register'); // This needs to be on top for alias package to work
 const config = require('../config');
 const logger = require('./utils/logger');
 const { ApolloServer } = require('apollo-server-express');

@@ -34,7 +34,6 @@
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "graphql": "^14.1.1",
-    "module-alias": "^2.2.1",
     "mongoose": "^5.5.1",
     "morgan": "^1.9.1"
   },
@@ -47,8 +46,5 @@
     "husky": "^3.0.0",
     "nodemon": "^1.18.11",
     "prettier": "^1.17.0"
-  },
-  "_moduleAliases": {
-    "@models": "src/models"
   }
 }
