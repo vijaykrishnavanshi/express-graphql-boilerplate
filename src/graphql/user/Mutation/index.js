@@ -1,12 +1,17 @@
 // Construct a schema, using GraphQL schema language
 const typeDefs = `
+  input SignupForm {
+    name: String!
+    email: String!
+    password: String!
+  }
   extend type Mutation {
-    user_update: String!
+    user_signup(signupForm: SignupForm!): User!
   }
 `;
 
 const resolvers = {
-  user_update: require('./user_update'),
+  user_signup: require('./user_signup'),
 };
 
 module.exports = {

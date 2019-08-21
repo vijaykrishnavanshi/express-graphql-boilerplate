@@ -1,6 +1,7 @@
 const subModules = [
   require('./Query'),
   require('./Mutation'),
+  require('./User'),
   // Some Factor
 ];
 
