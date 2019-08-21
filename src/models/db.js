@@ -1,12 +1,10 @@
 // Bring Mongoose into the app
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-dotenv.config();
-
+const config = require('../../config');
 const logger = require('../utils/logger');
 
 // Build the connection string
-const dbURI = process.env.MONGOURI || 'mongodb://localhost/boilerplate_graphql';
+const dbURI = config.MONGOURI || 'mongodb://localhost/boilerplate_graphql';
 
 // Create the database connection
 mongoose.connect(dbURI, err => {
