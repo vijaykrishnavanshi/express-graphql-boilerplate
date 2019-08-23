@@ -8,6 +8,7 @@
 const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
+const bodyParser = require('body-parser')
 
 // Express App
 const app = express();
@@ -15,8 +16,14 @@ const app = express();
 // connect database
 require('./models/db');
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
+
 // Use default logger for now
-app.use(logger('dev'));
+app.use(logger('combined'));
 app.use(cors());
 
 // This is to check if the service is online or not
