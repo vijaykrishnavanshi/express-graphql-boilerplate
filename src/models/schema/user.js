@@ -9,10 +9,13 @@ _user.schema = new Schema(
     name: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
-    salt: { type: String, required: true },
 
     // system generated
-    createdAt: { type: Number, required: true },
+    createdAt: {
+      type: Number,
+      required: true,
+      default: Date.now,
+    },
     updatedAt: { type: Number },
   },
   { usePushEach: true },
@@ -30,6 +33,7 @@ _user.schema.pre('save', function(next) {
   const user = this;
   // only hash the password if it has been modified (or is new)
   if (!user.isModified('password')) return next();
+  user.updatedAt = Date.now();
   user.password = _user.hashPassword(user.password);
   next();
 });
