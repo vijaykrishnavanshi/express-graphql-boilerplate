@@ -10,6 +10,8 @@ const logger = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
+const auth = require('./helpers/auth');
+
 // Express App
 const app = express();
 
@@ -25,6 +27,7 @@ app.use(bodyParser.json());
 // Use default logger for now
 app.use(logger('combined'));
 app.use(cors());
+app.use(auth.verifyToken);
 
 // This is to check if the service is online or not
 app.use('/ping', function(req, res) {

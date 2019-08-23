@@ -1,3 +1,5 @@
+const jwt = require('jsonwebtoken');
+const config = require('../../config');
 const { User } = require('../models');
 
 const _userController = {};
@@ -14,7 +16,10 @@ _userController.login = async ({ email, password }) => {
   if (!isCorrect) {
     throw new Error('Worng password!');
   }
-  return user.safeObject();
+  let token = jwt.sign(user.safeObject(), config.secret, {
+    expiresIn: '24h',
+  });
+  return { token };
 };
 
 module.exports = _userController;

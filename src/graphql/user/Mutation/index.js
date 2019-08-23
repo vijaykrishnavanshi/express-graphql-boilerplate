@@ -6,8 +6,8 @@ const typeDefs = `
     password: String!
   }
   extend type Mutation {
-    user_signup(signupForm: SignupForm!): User!
-    user_login(email: String!, password: String!): User!
+    user_signup(signupForm: SignupForm!): AuthPayload!
+    user_login(email: String!, password: String!): AuthPayload!
   }
 `;
 

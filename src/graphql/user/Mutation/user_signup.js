@@ -1,8 +1,12 @@
 const { UserController } = require('../../../controllers');
 
 const user_signup = async (root, { signupForm }) => {
-  const user = await UserController.signup(signupForm);
-  return user;
+  await UserController.signup(signupForm);
+  const { token } = await UserController.login({
+    email: signupForm.email,
+    password: signupForm.password,
+  });
+  return { token };
 };
 
 module.exports = user_signup;

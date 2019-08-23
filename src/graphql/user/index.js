@@ -2,6 +2,7 @@ const subModules = [
   require('./Query'),
   require('./Mutation'),
   require('./User'),
+  require('./AuthPayload'),
   // Some Factor
 ];
 
