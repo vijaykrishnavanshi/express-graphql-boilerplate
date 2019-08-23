@@ -22,4 +22,20 @@ _postController.delete = async postId => {
   return post.safeObject();
 };
 
+_postController.getPost = async (postId, createdBy) => {
+  const post = await Post.findOne({ _id: postId, createdBy });
+  if (!post) {
+    throw new Error('Post not found !');
+  }
+  return post.safeObject();
+};
+
+_postController.getPostList = async createdBy => {
+  const posts = await Post.find({ createdBy });
+  if (!posts) {
+    throw new Error('Post not found !');
+  }
+  return posts.map(elem => elem.safeObject());
+};
+
 module.exports = _postController;

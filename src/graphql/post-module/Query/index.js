@@ -1,11 +1,13 @@
 const typeDefs = `
   extend type Query {
-    post_hello: String!
+    post_list: [Post!]!
+    post_get(postId: String!): Post!
   }
 `;
 
 const resolvers = {
-  post_hello: require('./post_hello'),
+  post_list: require('./post_list'),
+  post_get: require('./post_get'),
 };
 
 module.exports = {
