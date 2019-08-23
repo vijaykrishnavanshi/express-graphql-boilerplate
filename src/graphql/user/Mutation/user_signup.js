@@ -1,5 +1,6 @@
-const user_signup = async (root, { signupForm }, { Controller }) => {
-  const { UserController } = Controller;
+const { UserController } = require('../../../controllers');
+
+const user_signup = async (root, { signupForm }) => {
   const user = await UserController.signup(signupForm);
   return user;
 };
