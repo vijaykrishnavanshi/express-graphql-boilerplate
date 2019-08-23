@@ -1,6 +1,5 @@
-const { User } = require('../../../models');
-
-const hello = async () => {
+const hello = async (root, args, { models }) => {
+  const { User } = models;
   const user = await User.findOne({})
     .lean()
     .exec();
