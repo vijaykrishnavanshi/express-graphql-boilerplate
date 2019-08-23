@@ -1,5 +1,5 @@
 const config = require('../config');
-const logger = require('./utils/logger');
+const logger = require('./helpers/logger');
 const { ApolloServer } = require('apollo-server-express');
 const GraphQL = require('./graphql');
 
