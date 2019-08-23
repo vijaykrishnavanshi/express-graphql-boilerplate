@@ -7,7 +7,7 @@ const _userController = {};
 _userController.signup = async ({ name, email, password }) => {
   const user = new User({ name, email, password });
   const savedUser = await user.save();
-  return savedUser.toObject();
+  return savedUser.safeObject();
 };
 
 _userController.login = async ({ email, password }) => {
@@ -19,7 +19,7 @@ _userController.login = async ({ email, password }) => {
   let token = jwt.sign(user.safeObject(), config.secret, {
     expiresIn: '24h',
   });
-  return { token };
+  return { token, user: user.safeObject() };
 };
 
 module.exports = _userController;
