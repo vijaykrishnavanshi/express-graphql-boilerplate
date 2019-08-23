@@ -1,4 +1,5 @@
 const dotenv = require('dotenv');
 dotenv.config();
-
-module.exports = process.env;
+const config = process.env;
+config.serviceName = config.serviceName || 'template-service';
+module.exports = config;
