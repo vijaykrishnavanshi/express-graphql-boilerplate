@@ -9,19 +9,33 @@ _post.schema = new Schema(
     post: { type: String, required: true },
 
     // system generated
-    createdAt: { type: Number, required: true },
+    createdAt: {
+      type: Number,
+      required: true,
+      default: Date.now,
+    },
     createdBy: {
       type: Schema.Types.ObjectId,
       ref: 'users',
       required: true,
     },
-
-    updatedAt: { type: Number },
+    updatedAt: {
+      type: Number,
+      default: Date.now,
+    },
   },
   { usePushEach: true },
   { runSettersOnQuery: true },
 );
 
 _post.model = mongoose.model('posts', _post.schema);
+
+_post.schema.pre('save', function(next) {
+  const post = this;
+  // only hash the password if it has been modified (or is new)
+  if (!post.isModified()) return next();
+  post.updatedAt = Date.now();
+  next();
+});
 
 module.exports = _post;
