@@ -1,6 +1,6 @@
 const { PostController } = require('../../../controllers');
 
-const post_update = async (root, { postId, postForm }) => {
+const post_delete = async (root, { postId, postForm }) => {
   const post = await PostController.update(postId, {
     title: postForm.title,
     body: postForm.body,
@@ -8,4 +8,4 @@ const post_update = async (root, { postId, postForm }) => {
   return post;
 };
 
-module.exports = post_update;
+module.exports = post_delete;

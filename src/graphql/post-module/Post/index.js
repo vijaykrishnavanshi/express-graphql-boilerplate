@@ -1,6 +1,7 @@
 // Construct a schema, using GraphQL schema language
 const typeDefs = `
   type Post {
+    _id: String!
     title: String!
     body: String!
     createdAt: Int!

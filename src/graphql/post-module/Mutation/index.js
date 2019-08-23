@@ -7,13 +7,15 @@ const typeDefs = `
 
   extend type Mutation {
     post_create(postForm: PostForm!): Post!
-    post_update: String!
+    post_update(postId: String!, postForm: PostForm!): Post!
+    post_delete(postId: String!): Post!
   }
 `;
 
 const resolvers = {
   post_create: require('./post_create'),
   post_update: require('./post_update'),
+  post_delete: require('./post_delete'),
 };
 
 module.exports = {
