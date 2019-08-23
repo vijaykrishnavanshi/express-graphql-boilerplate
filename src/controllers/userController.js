@@ -8,4 +8,13 @@ _userController.signup = async ({ name, email, password }) => {
   return savedUser.toObject();
 };
 
+_userController.login = async ({ email, password }) => {
+  const user = await User.findOne({ email });
+  const isCorrect = user.comparePassword(password);
+  if (!isCorrect) {
+    throw new Error('Worng password!');
+  }
+  return user.safeObject();
+};
+
 module.exports = _userController;

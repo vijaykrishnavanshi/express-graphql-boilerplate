@@ -42,6 +42,16 @@ _user.schema.methods.comparePassword = function(candidatePassword) {
   return bcrypt.compareSync(candidatePassword, this.password);
 };
 
+_user.schema.methods.safeObject = function() {
+  const safeFields = ['name', 'email', 'createdAt', 'updatedAt'];
+  const newSafeObject = {};
+  safeFields.forEach(elem => {
+    // eslint-disable-next-line security/detect-object-injection
+    newSafeObject[elem] = this[elem];
+  });
+  return newSafeObject;
+};
+
 _user.model = mongoose.model('users', _user.schema);
 
 module.exports = _user;

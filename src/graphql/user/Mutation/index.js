@@ -7,11 +7,13 @@ const typeDefs = `
   }
   extend type Mutation {
     user_signup(signupForm: SignupForm!): User!
+    user_login(email: String!, password: String!): User!
   }
 `;
 
 const resolvers = {
   user_signup: require('./user_signup'),
+  user_login: require('./user_login'),
 };
 
 module.exports = {
