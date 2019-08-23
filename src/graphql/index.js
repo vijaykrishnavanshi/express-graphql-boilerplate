@@ -15,8 +15,8 @@ baseModule.resolvers = {};
 
 const modules = [
   baseModule,
-  require('./user'),
-  require('./post'),
+  require('./user-module'),
+  require('./post-module'),
   // Modules
 ];
 
