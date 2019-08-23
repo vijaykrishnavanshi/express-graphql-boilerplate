@@ -8,6 +8,7 @@ const Controllers = require('./controllers');
 const server = new ApolloServer({
   typeDefs: GraphQL.typeDefs,
   resolvers: GraphQL.resolvers,
+  directiveResolvers: GraphQL.directiveResolvers,
   context: async ({ req }) => {
     return {
       Models,

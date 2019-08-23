@@ -22,8 +22,10 @@ const modules = [
 
 const typeDefs = modules.map(internalModule => internalModule.typeDefs);
 const resolvers = modules.map(internalModule => internalModule.resolvers);
+const directiveResolvers = require('./directives');
 
 module.exports = {
   typeDefs: typeDefs,
   resolvers: merge(...resolvers),
+  directiveResolvers,
 };
