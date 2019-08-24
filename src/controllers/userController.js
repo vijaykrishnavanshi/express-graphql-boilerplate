@@ -6,8 +6,8 @@ const _userController = {};
 
 _userController.signup = async ({ name, email, password }) => {
   const user = new User({ name, email, password });
-  const savedUser = await user.save();
-  return savedUser.safeObject();
+  await user.save();
+  return user.toObject();
 };
 
 _userController.login = async ({ email, password }) => {

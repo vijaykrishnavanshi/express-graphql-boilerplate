@@ -4,16 +4,16 @@ const _postController = {};
 
 _postController.create = async ({ title, body, createdBy }) => {
   const post = new Post({ title, body, createdBy });
-  const savedPost = await post.save();
-  return savedPost.safeObject();
+  await post.save();
+  return post.toObject();
 };
 
 _postController.update = async (postId, { title, body }) => {
   const post = await Post.findById(postId);
   post.title = title || post.title;
   post.body = body || post.body;
-  const savedPost = await post.save();
-  return savedPost.safeObject();
+  await post.save();
+  return post.toObject();
 };
 
 _postController.delete = async postId => {

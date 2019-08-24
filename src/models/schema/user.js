@@ -49,7 +49,7 @@ _user.schema.methods.comparePassword = function(candidatePassword) {
 };
 
 _user.schema.methods.safeObject = function() {
-  const safeFields = ['name', 'email', 'createdAt', 'updatedAt'];
+  const safeFields = ['_id', 'name', 'email', 'createdAt', 'updatedAt'];
   const newSafeObject = {};
   safeFields.forEach(elem => {
     // eslint-disable-next-line security/detect-object-injection

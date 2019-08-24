@@ -4,9 +4,9 @@ const typeDefs = `
     _id: String!
     title: String!
     body: String!
-    createdAt: Int!
+    createdAt: Date!
     createdBy: User! @authenticated
-    updatedAt: Int!
+    updatedAt: Date!
   }
 `;
 

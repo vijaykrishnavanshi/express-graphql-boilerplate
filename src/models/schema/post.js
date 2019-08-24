@@ -6,7 +6,7 @@ const _post = {};
 _post.schema = new Schema(
   {
     title: { type: String, required: true },
-    post: { type: String, required: true },
+    body: { type: String, required: true },
 
     // system generated
     createdAt: {
@@ -37,5 +37,22 @@ _post.schema.pre('save', function(next) {
   post.updatedAt = Date.now();
   next();
 });
+
+_post.schema.methods.safeObject = function() {
+  const safeFields = [
+    '_id',
+    'title',
+    'body',
+    'createdAt',
+    'updatedAt',
+    'createdBy',
+  ];
+  const newSafeObject = {};
+  safeFields.forEach(elem => {
+    // eslint-disable-next-line security/detect-object-injection
+    newSafeObject[elem] = this[elem];
+  });
+  return newSafeObject;
+};
 
 module.exports = _post;

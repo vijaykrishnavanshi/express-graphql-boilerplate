@@ -18,6 +18,7 @@ const modules = [
   baseModule,
   require('./user-module'),
   require('./post-module'),
+  require('./scalars'),
   // Modules
 ];
 
