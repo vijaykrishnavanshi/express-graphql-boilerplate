@@ -1,7 +1,10 @@
 let jwt = require('jsonwebtoken');
 const config = require('../../config');
+const uuidv1 = require('uuid/v1');
 
 let verifyToken = (req, res, next) => {
+  req.requestId = uuidv1();
+  console.log('req.requestId: ', req.requestId);
   let token = req.headers['x-access-token'] || req.headers['authorization']; // Express headers are auto converted to lowercase
   if (token && token.startsWith('Bearer ')) {
     // Remove Bearer from string
