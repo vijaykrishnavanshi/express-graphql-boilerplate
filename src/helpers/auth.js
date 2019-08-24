@@ -8,6 +8,7 @@ let verifyToken = (req, res, next) => {
     token = token.slice(7, token.length);
   }
 
+  req.isAuthenticated = false;
   if (token) {
     jwt.verify(token, config.secret, (err, decoded) => {
       if (err) {
@@ -16,7 +17,8 @@ let verifyToken = (req, res, next) => {
           message: 'Token is not valid',
         });
       } else {
-        req.user = decoded;
+        req.authUser = decoded;
+        req.isAuthenticated = true;
       }
     });
   }

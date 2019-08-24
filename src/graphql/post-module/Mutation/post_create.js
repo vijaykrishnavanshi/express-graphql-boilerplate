@@ -1,7 +1,7 @@
 const { PostController } = require('../../../controllers');
 
 const post_create = async (root, { postForm }, { req }) => {
-  const { user: loggedInUser } = req;
+  const { authUser: loggedInUser } = req;
   const post = await PostController.create({
     ...postForm,
     createdBy: loggedInUser._id,
