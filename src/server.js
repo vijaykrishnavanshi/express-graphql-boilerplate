@@ -4,6 +4,7 @@ const { ApolloServer } = require('apollo-server-express');
 const GraphQL = require('./graphql');
 const Models = require('./models');
 const Controllers = require('./controllers');
+const ErrorHandler = require('./helpers/errorHandler');
 
 const server = new ApolloServer({
   typeDefs: GraphQL.typeDefs,
@@ -16,6 +17,7 @@ const server = new ApolloServer({
       req,
     };
   },
+  formatError: ErrorHandler.formatGQLError,
 });
 
 const app = require('./app');

@@ -27,17 +27,6 @@ _post.schema = new Schema(
   { usePushEach: true },
   { runSettersOnQuery: true },
 );
-
-_post.model = mongoose.model('posts', _post.schema);
-
-_post.schema.pre('save', function(next) {
-  const post = this;
-  // only hash the password if it has been modified (or is new)
-  if (!post.isModified()) return next();
-  post.updatedAt = Date.now();
-  next();
-});
-
 _post.schema.methods.safeObject = function() {
   const safeFields = [
     '_id',
@@ -54,5 +43,15 @@ _post.schema.methods.safeObject = function() {
   });
   return newSafeObject;
 };
+
+_post.schema.pre('save', function(next) {
+  const post = this;
+  // only hash the password if it has been modified (or is new)
+  if (!post.isModified()) return next();
+  post.updatedAt = Date.now();
+  next();
+});
+
+_post.model = mongoose.model('posts', _post.schema);
 
 module.exports = _post;
