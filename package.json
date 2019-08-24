@@ -4,7 +4,7 @@
   "description": "This is graphql apis using express",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node src/server.js",
     "lint": "./node_modules/.bin/eslint ./src",
     "lint:fix": "./node_modules/.bin/eslint ./src --fix",
@@ -41,12 +41,14 @@
     "morgan": "^1.9.1"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "^6.2.0",
     "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-node": "^9.0.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-security": "^1.4.0",
     "husky": "^3.0.0",
+    "mocha": "^6.2.0",
     "nodemon": "^1.18.11",
     "prettier": "^1.17.0"
   },

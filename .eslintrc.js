@@ -21,6 +21,9 @@ module.exports = {
             "parser": "flow",
             "trailingComma": "all"
         }],
+        "no-unused-vars": ["error", {
+            "varsIgnorePattern": "should|expect"
+        }],
     },
     "parserOptions": {
         "sourceType": "module"
