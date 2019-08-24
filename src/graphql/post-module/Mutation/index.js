@@ -6,9 +6,9 @@ const typeDefs = `
   }
 
   extend type Mutation {
-    post_create(postForm: PostForm!): Post!
-    post_update(postId: String!, postForm: PostForm!): Post!
-    post_delete(postId: String!): Post!
+    post_create(postForm: PostForm!): Post! @authenticated
+    post_update(postId: String!, postForm: PostForm!): Post! @authenticated
+    post_delete(postId: String!): Post! @authenticated
   }
 `;
 

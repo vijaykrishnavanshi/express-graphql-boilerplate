@@ -5,7 +5,7 @@ const typeDefs = `
     title: String!
     body: String!
     createdAt: Int!
-    createdBy: User!
+    createdBy: User! @authenticated
     updatedAt: Int!
   }
 `;

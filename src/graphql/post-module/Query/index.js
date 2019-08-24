@@ -1,7 +1,7 @@
 const typeDefs = `
   extend type Query {
-    post_list: [Post!]!
-    post_get(postId: String!): Post!
+    post_list: [Post!]! @authenticated
+    post_get(postId: String!): Post! @authenticated
   }
 `;
 

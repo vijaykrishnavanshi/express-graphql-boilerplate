@@ -1,6 +1,7 @@
 const { merge } = require('lodash');
 const baseModule = {};
 baseModule.typeDefs = `
+  directive @authenticated on FIELD_DEFINITION | OBJECT
   type Query {
     _empty: String
   }
@@ -22,10 +23,10 @@ const modules = [
 
 const typeDefs = modules.map(internalModule => internalModule.typeDefs);
 const resolvers = modules.map(internalModule => internalModule.resolvers);
-const directiveResolvers = require('./directives');
+const schemaDirectives = require('./directives');
 
 module.exports = {
-  typeDefs: typeDefs,
+  typeDefs,
   resolvers: merge(...resolvers),
-  directiveResolvers,
+  schemaDirectives,
 };
