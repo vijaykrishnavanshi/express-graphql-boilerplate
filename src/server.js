@@ -4,19 +4,11 @@ const { ApolloServer } = require('apollo-server-express');
 const GraphQL = require('./graphql');
 const Models = require('./models');
 const Controllers = require('./controllers');
-const { makeExecutableSchema } = require('graphql-tools');
 
-const normalSchema = makeExecutableSchema({
+const server = new ApolloServer({
   typeDefs: GraphQL.typeDefs,
   resolvers: GraphQL.resolvers,
   schemaDirectives: GraphQL.schemaDirectives,
-});
-
-const server = new ApolloServer({
-  schema: normalSchema,
-  // typeDefs: GraphQL.typeDefs,
-  // resolvers: GraphQL.resolvers,
-  // schemaDirectives: GraphQL.schemaDirectives,
   context: async ({ req }) => {
     return {
       Models,
