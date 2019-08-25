@@ -3,12 +3,12 @@ const userController = require('../../src/controllers/userController');
 // eslint-disable-next-line node/no-unpublished-require
 const { expect } = require('chai');
 
-describe('#postController()', function() {
-  context('Create Post', function() {
+describe('#postController()', async function() {
+  context('Create Post', async function() {
     it('success case', async function() {
       const user = await userController.signup({
         name: 'Test',
-        email: 'test@example.com',
+        email: `${parseInt(Math.random() * 1000, 10)}test@example.com`,
         password: '12345',
       });
       const postData = {
@@ -21,11 +21,11 @@ describe('#postController()', function() {
       expect(createdPost.body).to.equal(postData.body);
     });
   });
-  context('Update Post', function() {
+  context('Update Post', async function() {
     it('success case', async function() {
       const user = await userController.signup({
         name: 'Test',
-        email: 'test@example.com',
+        email: `${parseInt(Math.random() * 1000, 10)}test@example.com`,
         password: '12345',
       });
       const postData = {
@@ -45,11 +45,11 @@ describe('#postController()', function() {
       expect(updatedPost.body).to.equal(dataToUpdate.body);
     });
   });
-  context('Delete Post', function() {
+  context('Delete Post', async function() {
     it('success case', async function() {
       const user = await userController.signup({
         name: 'Test',
-        email: 'test@example.com',
+        email: `${parseInt(Math.random() * 1000, 10)}test@example.com`,
         password: '12345',
       });
       const postData = {

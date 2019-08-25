@@ -15,9 +15,6 @@ const auth = require('./helpers/auth');
 // Express App
 const app = express();
 
-// connect database
-require('./models/db');
-
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 

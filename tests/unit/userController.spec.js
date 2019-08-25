@@ -7,22 +7,19 @@ describe('#userController()', function() {
     it('success case', async function() {
       const userData = {
         name: 'Test',
-        email: 'test@example.com',
+        email: `${parseInt(Math.random() * 1000, 10)}test@example.com`,
         password: '12345',
       };
-      const { user: createdUser, token } = await userController.signup(
-        userData,
-      );
+      const createdUser = await userController.signup(userData);
       expect(createdUser.name).to.equal(userData.name);
       expect(createdUser.email).to.equal(userData.email);
-      expect(token).to.not.be.null;
     });
   });
   context('log in', function() {
     it('success case', async function() {
       const userData = {
         name: 'Test',
-        email: 'test@example.com',
+        email: `${parseInt(Math.random() * 1000, 10)}test@example.com`,
         password: '12345',
       };
       const createdUser = await userController.signup(userData);
