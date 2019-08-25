@@ -4,7 +4,7 @@
   "description": "This is graphql apis using express",
   "main": "server.js",
   "scripts": {
-    "test": "mocha tests/unit",
+    "test": "mocha tests/unit --exit",
     "start": "node src/server.js",
     "lint": "./node_modules/.bin/eslint ./src",
     "lint:fix": "./node_modules/.bin/eslint ./src --fix",
