@@ -2,7 +2,7 @@ const bunyan = require('bunyan');
 const config = require('../../config');
 
 const logger = bunyan.createLogger({
-  name: config.serviceName,
+  name: config.SERVICE_NAME,
   streams: [
     {
       level: 'debug',
@@ -11,14 +11,14 @@ const logger = bunyan.createLogger({
     {
       type: 'rotating-file',
       level: 'info',
-      path: `logs/${config.serviceName}-debug.log`,
+      path: `logs/${config.SERVICE_NAME}-debug.log`,
       period: '1d', // daily rotation
       count: 10, // keep 10 back copies
     },
     {
       type: 'rotating-file',
       level: 'error',
-      path: `logs/${config.serviceName}-error.log`,
+      path: `logs/${config.SERVICE_NAME}-error.log`,
       period: '1d', // daily rotation
       count: 10, // keep 10 back copies
     },

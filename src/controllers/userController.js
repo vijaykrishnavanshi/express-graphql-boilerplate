@@ -26,7 +26,7 @@ _userController.login = async ({ email, password }) => {
       code: 401,
     });
   }
-  let token = jwt.sign(user.safeObject(), config.secret, {
+  let token = jwt.sign(user.safeObject(), config.JWT_SECRET, {
     expiresIn: '24h',
   });
   return { token, user: user.safeObject() };

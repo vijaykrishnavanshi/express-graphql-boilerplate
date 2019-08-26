@@ -1,5 +1,11 @@
 const dotenv = require('dotenv');
-dotenv.config();
+const path = require('path');
+dotenv.config({
+  path: path.resolve(
+    __dirname,
+    `../${process.env.NODE_ENV ? process.env.NODE_ENV : ''}.env`,
+  ),
+});
 const config = process.env;
-config.serviceName = config.serviceName || 'template-service';
+config.SERVICE_NAME = config.SERVICE_NAME || 'template-service';
 module.exports = config;

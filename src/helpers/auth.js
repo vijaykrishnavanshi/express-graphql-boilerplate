@@ -13,7 +13,7 @@ let verifyToken = (req, res, next) => {
 
   req.isAuthenticated = false;
   if (token) {
-    jwt.verify(token, config.secret, (err, decoded) => {
+    jwt.verify(token, config.JWT_SECRET, (err, decoded) => {
       if (err) {
         return res.json({
           success: false,
