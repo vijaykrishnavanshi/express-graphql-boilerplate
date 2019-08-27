@@ -1,3 +1,5 @@
+const server = require('../../../../src/server');
+
 // eslint-disable-next-line node/no-unpublished-require
 const { expect } = require('chai');
 

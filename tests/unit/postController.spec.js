@@ -1,9 +1,16 @@
+const mongoose = require('mongoose');
 const postController = require('../../src/controllers/postController');
 const userController = require('../../src/controllers/userController');
 // eslint-disable-next-line node/no-unpublished-require
 const { expect } = require('chai');
 
 describe('#postController()', async function() {
+  beforeEach(async () => {
+    await mongoose.connection.dropDatabase();
+  });
+  afterEach(async () => {
+    await mongoose.connection.dropDatabase();
+  });
   context('Create Post', async function() {
     it('success case', async function() {
       const user = await userController.signup({
