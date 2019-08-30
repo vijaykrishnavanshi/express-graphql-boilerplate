@@ -1,3 +1,4 @@
 node_modules/*
 tests/*
-log/*
+logs/*
+.nyc_output/*
