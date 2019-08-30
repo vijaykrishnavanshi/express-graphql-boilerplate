@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-const userController = require('../../src/controllers/userController');
+const userService = require('../../src/services/userService');
 // eslint-disable-next-line node/no-unpublished-require
 const { expect } = require('chai');
 
-describe('#userController()', function() {
+describe('#userService()', function() {
   beforeEach(async () => {
     await mongoose.connection.dropDatabase();
   });
@@ -17,7 +17,7 @@ describe('#userController()', function() {
         email: `${parseInt(Math.random() * 1000, 10)}test@example.com`,
         password: '12345',
       };
-      const createdUser = await userController.signup(userData);
+      const createdUser = await userService.signup(userData);
       expect(createdUser.name).to.equal(userData.name);
       expect(createdUser.email).to.equal(userData.email);
     });
@@ -29,10 +29,10 @@ describe('#userController()', function() {
         email: `${parseInt(Math.random() * 1000, 10)}test@example.com`,
         password: '12345',
       };
-      const createdUser = await userController.signup(userData);
+      const createdUser = await userService.signup(userData);
       expect(createdUser.name).to.equal(userData.name);
       expect(createdUser.email).to.equal(userData.email);
-      const { token, user } = await userController.login({
+      const { token, user } = await userService.login({
         email: userData.email,
         password: userData.password,
       });

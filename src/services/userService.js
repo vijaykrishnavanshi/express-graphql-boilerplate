@@ -3,15 +3,15 @@ const config = require('../../config');
 const { User } = require('../models');
 const ErrorHandler = require('../helpers/errorHandler');
 
-const _userController = {};
+const _userService = {};
 
-_userController.signup = async ({ name, email, password }) => {
+_userService.signup = async ({ name, email, password }) => {
   const user = new User({ name, email, password });
   await user.save();
   return user.safeObject();
 };
 
-_userController.login = async ({ email, password }) => {
+_userService.login = async ({ email, password }) => {
   const user = await User.findOne({ email });
   if (!user) {
     ErrorHandler.throwError({
@@ -32,4 +32,4 @@ _userController.login = async ({ email, password }) => {
   return { token, user: user.safeObject() };
 };
 
-module.exports = _userController;
+module.exports = _userService;

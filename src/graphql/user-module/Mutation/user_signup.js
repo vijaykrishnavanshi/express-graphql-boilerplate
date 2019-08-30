@@ -1,8 +1,8 @@
-const { UserController } = require('../../../controllers');
+const { UserService } = require('../../../services');
 
 const user_signup = async (root, { signupForm }) => {
-  await UserController.signup(signupForm);
-  const { token, user } = await UserController.login({
+  await UserService.signup(signupForm);
+  const { token, user } = await UserService.login({
     email: signupForm.email,
     password: signupForm.password,
   });

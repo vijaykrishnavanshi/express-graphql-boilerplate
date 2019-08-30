@@ -1,15 +1,15 @@
 const { Post } = require('../models');
 const ErrorHandler = require('../helpers/errorHandler');
 
-const _postController = {};
+const _postService = {};
 
-_postController.create = async ({ title, body, createdBy }) => {
+_postService.create = async ({ title, body, createdBy }) => {
   const post = new Post({ title, body, createdBy });
   await post.save();
   return post.safeObject();
 };
 
-_postController.update = async (postId, { title, body }) => {
+_postService.update = async (postId, { title, body }) => {
   const post = await Post.findById(postId);
   if (!post) {
     ErrorHandler.throwError({ message: 'Post not found !', code: 404 });
@@ -20,7 +20,7 @@ _postController.update = async (postId, { title, body }) => {
   return post.safeObject();
 };
 
-_postController.delete = async postId => {
+_postService.delete = async postId => {
   const post = await Post.findById(postId);
   if (!post) {
     ErrorHandler.throwError({ message: 'Post not found !', code: 404 });
@@ -29,7 +29,7 @@ _postController.delete = async postId => {
   return post.safeObject();
 };
 
-_postController.getPost = async (postId, createdBy) => {
+_postService.getPost = async (postId, createdBy) => {
   const post = await Post.findOne({ _id: postId, createdBy });
   if (!post) {
     ErrorHandler.throwError({ message: 'Post not found !', code: 404 });
@@ -37,7 +37,7 @@ _postController.getPost = async (postId, createdBy) => {
   return post.safeObject();
 };
 
-_postController.getPostList = async createdBy => {
+_postService.getPostList = async createdBy => {
   const posts = await Post.find({ createdBy });
   if (!posts) {
     ErrorHandler.throwError({ message: 'Post not found !', code: 404 });
@@ -45,4 +45,4 @@ _postController.getPostList = async createdBy => {
   return posts.map(elem => elem.safeObject());
 };
 
-module.exports = _postController;
+module.exports = _postService;
