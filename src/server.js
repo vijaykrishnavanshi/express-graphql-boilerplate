@@ -18,11 +18,17 @@ const server = new ApolloServer({
     };
   },
   formatError: ErrorHandler.formatGQLError,
+  introspection: true,
+  playground: true,
 });
 
 const app = require('./app');
 
-server.applyMiddleware({ app });
+server.applyMiddleware({
+  app,
+  // change this if you wnat to host schema on a different path
+  path: '/',
+});
 
 // Here you set the PORT and IP of the server
 const port = config.PORT || 8001;
