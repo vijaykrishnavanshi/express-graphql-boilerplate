@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/vijaykrishnavanshi/express-graphql-boilerplate.svg?branch=master)](https://travis-ci.com/vijaykrishnavanshi/express-graphql-boilerplate) 
 [![Greenkeeper badge](https://badges.greenkeeper.io/vijaykrishnavanshi/express-graphql-boilerplate.svg)](https://greenkeeper.io/) 
-[![GitHub](https://img.shields.io/github/license/vijaykrishnavanshi/express-graphql-boilerplate)](https://github.com/vijaykrishnavanshi/express-graphql-boilerplate/blob/master/LICENSE)
+[![GitHub](https://img.shields.io/github/license/vijaykrishnavanshi/express-graphql-boilerplate.svg)](https://github.com/vijaykrishnavanshi/express-graphql-boilerplate/blob/master/LICENSE)
 
 Boilerplate code to setup express apis with graphql
 
