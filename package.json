@@ -53,7 +53,7 @@
     "eslint-plugin-security": "^1.4.0",
     "husky": "^3.0.9",
     "mocha": "^6.2.2",
-    "nodemon": "^1.19.4",
+    "nodemon": "^2.0.0",
     "prettier": "^1.19.1"
   },
   "engines": {
