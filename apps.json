@@ -2,7 +2,7 @@
     "apps": [
       {
         "name": "express-gql",
-        "script": "npm",
+        "script": "npm run",
         "args": "deploy",
         "env": {
             "NODE_ENV": "production"
