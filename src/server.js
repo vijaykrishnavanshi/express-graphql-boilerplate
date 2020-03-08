@@ -20,6 +20,8 @@ const server = new ApolloServer({
   formatError: ErrorHandler.formatGQLError,
   introspection: true,
   playground: true,
+  tracing: true,
+  batching: true,
 });
 
 const app = require('./app');

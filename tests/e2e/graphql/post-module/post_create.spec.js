@@ -18,8 +18,8 @@ describe('mutation post_create', async function() {
           }
         }
       `;
-      const { data, errors } = await fireGQLQuery(server, gqlQuery);
-      console.log(data, errors);
+      const { data, errors, extensions } = await fireGQLQuery(server, gqlQuery);
+      console.log(data, errors, extensions);
       expect(true).to.equal(true);
     });
     it('case2: ', async function() {
