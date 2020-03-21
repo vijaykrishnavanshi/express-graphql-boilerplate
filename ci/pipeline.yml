@@ -21,7 +21,7 @@ resources:
     type: docker-image
     source:
       repository: mongo
-      tag: alpine
+      tag: 3.6.5
 
 jobs:
   - name: Install dependencies
