@@ -30,8 +30,16 @@ jobs:
         passed: [Install dependencies]
       - get: dependency-cache
         passed: [Install dependencies]
-      - task: run mongodb
-      
-        passed: [MongoDB Running]
+      # - task: run mongodb
+      #   config:
+      #     platform: linux
+      #     image_resource:
+      #       type: docker-image
+      #       source:
+      #         repository: mongodb
+      #     run:
+      #       path: mongodb
+      #       args: ["27017:27017"]
+      #   passed: [MongoDB Running]
       - task: run the test suite
         file: express_gql/ci/tasks/run_tests.yml
