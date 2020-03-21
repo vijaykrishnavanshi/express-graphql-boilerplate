@@ -8,7 +8,7 @@ class AuthDirective extends SchemaDirectiveVisitor {
   // the parent and grandparent types.
   visitFieldDefinition(field) {
     const { resolve = defaultFieldResolver } = field;
-    field.resolve = async function(...args) {
+    field.resolve = async function (...args) {
       const context = args[2];
       const { isAuthenticated } = context.req;
       if (isAuthenticated) {

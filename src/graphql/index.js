@@ -22,8 +22,8 @@ const modules = [
   // Modules
 ];
 
-const typeDefs = modules.map(internalModule => internalModule.typeDefs);
-const resolvers = modules.map(internalModule => internalModule.resolvers);
+const typeDefs = modules.map((internalModule) => internalModule.typeDefs);
+const resolvers = modules.map((internalModule) => internalModule.resolvers);
 const schemaDirectives = require('./directives');
 
 module.exports = {

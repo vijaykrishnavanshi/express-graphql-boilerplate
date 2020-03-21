@@ -1,6 +1,6 @@
 const _errorHandler = {};
 
-_errorHandler.formatGQLError = function(err) {
+_errorHandler.formatGQLError = function (err) {
   const { req = {} } = err.originalError || {};
   const responseData = {
     requestId: req.requestId,

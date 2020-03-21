@@ -35,7 +35,7 @@ _user.hashPassword = function hashPassword(password) {
   return hash;
 };
 
-_user.schema.pre('save', function(next) {
+_user.schema.pre('save', function (next) {
   const user = this;
   // only hash the password if it has been modified (or is new)
   if (!user.isModified('password')) return next();
@@ -44,14 +44,14 @@ _user.schema.pre('save', function(next) {
   next();
 });
 
-_user.schema.methods.comparePassword = function(candidatePassword) {
+_user.schema.methods.comparePassword = function (candidatePassword) {
   return bcrypt.compareSync(candidatePassword, this.password);
 };
 
-_user.schema.methods.safeObject = function() {
+_user.schema.methods.safeObject = function () {
   const safeFields = ['_id', 'name', 'email', 'createdAt', 'updatedAt'];
   const newSafeObject = {};
-  safeFields.forEach(elem => {
+  safeFields.forEach((elem) => {
     // eslint-disable-next-line security/detect-object-injection
     newSafeObject[elem] = this[elem];
   });

@@ -20,7 +20,7 @@ _postService.update = async (postId, { title, body }) => {
   return post.safeObject();
 };
 
-_postService.delete = async postId => {
+_postService.delete = async (postId) => {
   const post = await Post.findById(postId);
   if (!post) {
     ErrorHandler.throwError({ message: 'Post not found !', code: 404 });
@@ -37,12 +37,12 @@ _postService.getPost = async (postId, createdBy) => {
   return post.safeObject();
 };
 
-_postService.getPostList = async createdBy => {
+_postService.getPostList = async (createdBy) => {
   const posts = await Post.find({ createdBy });
   if (!posts) {
     ErrorHandler.throwError({ message: 'Post not found !', code: 404 });
   }
-  return posts.map(elem => elem.safeObject());
+  return posts.map((elem) => elem.safeObject());
 };
 
 module.exports = _postService;

@@ -27,7 +27,7 @@ app.use(cors());
 app.use(auth.verifyToken);
 
 // This is to check if the service is online or not
-app.use('/ping', function(req, res) {
+app.use('/ping', function (req, res) {
   res.json({ reply: 'pong' });
   res.end();
 });

@@ -27,7 +27,7 @@ _post.schema = new Schema(
   { usePushEach: true },
   { runSettersOnQuery: true },
 );
-_post.schema.methods.safeObject = function() {
+_post.schema.methods.safeObject = function () {
   const safeFields = [
     '_id',
     'title',
@@ -37,14 +37,14 @@ _post.schema.methods.safeObject = function() {
     'createdBy',
   ];
   const newSafeObject = {};
-  safeFields.forEach(elem => {
+  safeFields.forEach((elem) => {
     // eslint-disable-next-line security/detect-object-injection
     newSafeObject[elem] = this[elem];
   });
   return newSafeObject;
 };
 
-_post.schema.pre('save', function(next) {
+_post.schema.pre('save', function (next) {
   const post = this;
   // only hash the password if it has been modified (or is new)
   if (!post.isModified()) return next();

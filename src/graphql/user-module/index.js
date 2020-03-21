@@ -9,7 +9,7 @@ const subModules = [
 const typeDefs = [];
 const resolvers = {};
 
-subModules.forEach(subModule => {
+subModules.forEach((subModule) => {
   typeDefs.push(subModule.typeDefs);
   resolvers[subModule.typeName] = subModule.resolvers;
 });
