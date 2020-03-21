@@ -30,5 +30,8 @@ jobs:
         passed: [Install dependencies]
       - get: dependency-cache
         passed: [Install dependencies]
+      - task: run mongodb
+      
+        passed: [MongoDB Running]
       - task: run the test suite
         file: express_gql/ci/tasks/run_tests.yml
