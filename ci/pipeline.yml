@@ -40,4 +40,5 @@ jobs:
         - get: dependency-cache
           passed: [Install dependencies]
       - task: run the test suite
+        privileged: true
         file: express_gql/ci/tasks/run_tests.yml
