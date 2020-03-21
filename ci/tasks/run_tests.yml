@@ -1,0 +1,15 @@
+---
+
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: node
+    tag: latest
+inputs:
+  - name: express_gql
+  - name: dependency-cache
+
+run:
+  path: express_gql/ci/scripts/run_tests.sh
