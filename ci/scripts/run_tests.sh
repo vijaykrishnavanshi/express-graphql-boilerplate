@@ -16,6 +16,9 @@ docker images
 # Run the container with tests and its dependencies.
 docker-compose -f express_gql/ci/services.yml up -d
 
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+source ~/.profile 
+
 cd express_gql && npm install && npm test
 
 # Cleanup.
