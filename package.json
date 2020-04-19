@@ -12,7 +12,8 @@
     "lint:fix": "./node_modules/.bin/eslint ./src --fix",
     "predeploy": "NODE_ENV=production npm install",
     "deploy": "NODE_ENV=production npm start",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "generate": "plop --plopfile src/generator/index.js"
   },
   "repository": {
     "type": "git",
@@ -54,6 +55,7 @@
     "husky": "^4.2.5",
     "mocha": "^7.1.1",
     "nodemon": "^2.0.3",
+    "plop": "^2.6.0",
     "prettier": "^2.0.4"
   },
   "engines": {
