@@ -1,7 +1,7 @@
 const { delayLog } = require('./helpers/utils');
 
 module.exports = function (plop) {
-  // query generator
+  // type generator
   plop.setGenerator('Type', {
     description: 'GraphQL Type Logic',
     prompts: [

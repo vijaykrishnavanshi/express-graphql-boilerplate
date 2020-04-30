@@ -1,7 +1,7 @@
 const { delayLog } = require('./helpers/utils');
 
 module.exports = function (plop) {
-  // query generator
+  // scalar generator
   plop.setGenerator('Scalar', {
     description: 'GraphQL Scalar Logic',
     prompts: [

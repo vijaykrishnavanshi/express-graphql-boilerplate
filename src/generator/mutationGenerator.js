@@ -1,7 +1,7 @@
 const { delayLog } = require('./helpers/utils');
 
 module.exports = function (plop) {
-  // query generator
+  // mutation generator
   plop.setGenerator('Mutation', {
     description: 'GraphQL Mutation Logic',
     prompts: [

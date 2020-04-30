@@ -1,7 +1,7 @@
 const { delayLog } = require('./helpers/utils');
 
 module.exports = function (plop) {
-  // query generator
+  // subscription generator
   plop.setGenerator('Subscription', {
     description: 'GraphQL Subscription Logic',
     prompts: [

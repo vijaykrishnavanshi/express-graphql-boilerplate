@@ -1,7 +1,7 @@
 const { delayLog } = require('./helpers/utils');
 
 module.exports = function (plop) {
-  // query generator
+  // directive generator
   plop.setGenerator('Directive', {
     description: 'GraphQL Directive Logic',
     prompts: [
