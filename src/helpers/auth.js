@@ -1,6 +1,6 @@
 let jwt = require('jsonwebtoken');
 const config = require('../../config');
-const uuidv1 = require('uuid/v1');
+const { v1: uuidv1 } = require('uuid');
 
 let verifyToken = (req, res, next) => {
   req.requestId = uuidv1();
